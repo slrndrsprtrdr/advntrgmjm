@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Rocket
+  - Platform
   layers:
   - Default
   - TransparentFX
@@ -11,13 +13,13 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Player
+  - Background
+  - Enemies
+  - Hazard
+  - Bullets
+  - Interactables
   - 
   - 
   - 
@@ -40,4 +42,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2117060337
+    locked: 0
+  - name: Platforms
+    uniqueID: 3944418051
+    locked: 0
+  - name: Hazards
+    uniqueID: 748898661
+    locked: 0
+  - name: Interactables
+    uniqueID: 1839309071
+    locked: 0
+  - name: Enemies
+    uniqueID: 2101798889
+    locked: 0
+  - name: Player
+    uniqueID: 3443846567
     locked: 0
