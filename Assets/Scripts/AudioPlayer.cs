@@ -8,6 +8,10 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip bouncingClip;
     [SerializeField] [Range(0f, 1f)] float bouncingVolume = 1f;
 
+    [Header("Firing")]
+    [SerializeField] AudioClip firingClip;
+    [SerializeField] [Range(0f, 1f)] float firingVolume = 1f;
+
     [Header("Landing")]
     [SerializeField] AudioClip landingClip;
     [SerializeField] [Range(0f, 1f)] float landingVolume = 1f;
@@ -30,6 +34,11 @@ public class AudioPlayer : MonoBehaviour
     public void BouncingClip()
     {
         PlayClip(bouncingClip, bouncingVolume);
+    }
+
+    public void FiringClip()
+    {
+        PlayClip(firingClip, firingVolume);
     }
 
     public void LandingClip()

@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float slideSpeed = 5f;
     [SerializeField] float bounceSpeed = 4f;
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform bulletPosition;
 
     bool isAlive = true;
 
@@ -35,6 +37,16 @@ public class PlayerMovement : MonoBehaviour
         }
         Slide();
         Die();
+    }
+
+    void OnFire(InputValue value)
+    {
+        if (!isAlive)
+        {
+            return;
+        }
+        Instantiate(bullet, bulletPosition.position, transform.rotation);
+        audioPlayer.FiringClip();
     }
 
     void OnMove(InputValue value)

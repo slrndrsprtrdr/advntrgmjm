@@ -14492,7 +14492,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e66db8517f350e8438cd9c88dd0e02ff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118840,7 +118840,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bouncingClip: {fileID: 8300000, guid: 12299eb78841fe842b2caee33a5c63ff, type: 3}
-  bouncingVolume: 1
+  bouncingVolume: 0.077
+  firingClip: {fileID: 8300000, guid: 2f05753740744534baf8e131a229aae3, type: 3}
+  firingVolume: 1
   landingClip: {fileID: 0}
   landingVolume: 1
   turboClip: {fileID: 0}
@@ -119246,20 +119248,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5235725176238878242, guid: f6baf67250aff8f45b555e890620a377, type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 3972430076518421252, guid: f6baf67250aff8f45b555e890620a377, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 5745469097443436795, guid: 1a075bcc9493b534188d87d427c971d8, type: 3}
+    - target: {fileID: 3972430076518421252, guid: f6baf67250aff8f45b555e890620a377, type: 3}
+      propertyPath: bulletPosition
+      value: 
+      objectReference: {fileID: 5235725176238878240}
     - target: {fileID: 5745469097443436795, guid: f6baf67250aff8f45b555e890620a377, type: 3}
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
-    - target: {fileID: 5745469097443436795, guid: f6baf67250aff8f45b555e890620a377, type: 3}
-      propertyPath: m_TagString
-      value: Rocket
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6baf67250aff8f45b555e890620a377, type: 3}
+--- !u!4 &5235725176238878240 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4598425585946014876, guid: f6baf67250aff8f45b555e890620a377, type: 3}
+  m_PrefabInstance: {fileID: 5235725176238878239}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5235725176238878245 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 92190106985662649, guid: f6baf67250aff8f45b555e890620a377, type: 3}
