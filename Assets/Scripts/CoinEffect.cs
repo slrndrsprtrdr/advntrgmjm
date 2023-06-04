@@ -31,7 +31,7 @@ public class CoinEffect : MonoBehaviour
             coinCollected = true;
             FindObjectOfType<LevelManager>().PointsToScore(coinPoints);
             //gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            //Invoke("DestroyCoin", destroyCoinDelay);
+            Invoke("DestroyCoin", destroyCoinDelay);
         }
     }
 }
