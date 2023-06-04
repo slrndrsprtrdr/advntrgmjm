@@ -80,17 +80,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Die()
     {
-        if(myCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if(myCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) || myCollider.IsTouchingLayers(LayerMask.GetMask("Enemies")))
         {
             isAlive = false;
             FindObjectOfType<LevelManager>().RocketDestroy();
         }
     }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-    }
-
-
 }
