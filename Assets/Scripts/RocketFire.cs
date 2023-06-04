@@ -28,6 +28,13 @@ public class RocketFire : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);  
+        Destroy(gameObject);
+
+        switch (collision.collider.tag)
+        {
+            case "Enemy":
+                Destroy(collision.gameObject);
+                break;
+        }
     }
 }
