@@ -13,6 +13,12 @@ public class PlayerMovement : MonoBehaviour
     Vector2 moveInput;
     Rigidbody2D myRigidbody;
     CapsuleCollider2D myCollider;
+    AudioPlayer audioPlayer;
+
+    void Awake()
+    {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
 
     void Start()
     {
@@ -50,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
         if (value.isPressed)
         {
             myRigidbody.velocity += new Vector2(0f, bounceSpeed);
+            audioPlayer.BouncingClip();
         }
     }
 
@@ -66,6 +73,11 @@ public class PlayerMovement : MonoBehaviour
             isAlive = false;
             FindObjectOfType<LevelManager>().RocketDestroy();
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        
     }
 
 
