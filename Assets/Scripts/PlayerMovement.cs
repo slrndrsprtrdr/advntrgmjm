@@ -31,12 +31,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if(!isAlive)
-        {
-            return;
-        }
+
+            if (!isAlive)
+            {
+                return;
+            }
+        
         Slide();
         Die();
+
     }
 
     void OnFire(InputValue value)
