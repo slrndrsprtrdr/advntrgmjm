@@ -8,6 +8,11 @@ TagManager:
   - Platform
   - Enemy
   - EnemyController
+  - RocketLauncher
+  - RocketLanding
+  - GunUpgrade
+  - LifeUpgrade
+  - BonusLevel
   layers:
   - Default
   - TransparentFX

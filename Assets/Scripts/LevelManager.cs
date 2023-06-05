@@ -55,6 +55,13 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(curretSceneIndex);
         livesText.text = numberOfPlayerLives.ToString();
     }
+
+    public void IncreaseLife()
+    {
+        numberOfPlayerLives++;
+        int curretSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        livesText.text = numberOfPlayerLives.ToString();
+    }
     void ReloadGame()
     {
         SceneManager.LoadScene(0);
