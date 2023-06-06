@@ -30,11 +30,11 @@ public class RocketFire : MonoBehaviour
     {
         Destroy(gameObject);
 
-        switch (collision.collider.tag)
-        {
-            case "Enemy":
-                Destroy(collision.gameObject);
-                break;
-        }
+        //switch (collision.collider.tag)
+        //{
+        //    case "EnemyShip":
+        //        Destroy(collision.gameObject);
+        //        break;
+        //}
     }
 }

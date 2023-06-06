@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4933551693724071236}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080884036159649473}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.048, z: 0}
+  m_LocalPosition: {x: 0, y: -1.184, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 4560430357322629112}
   m_Layer: 9
   m_Name: Enemy Ship
-  m_TagString: Enemy
+  m_TagString: EnemyShip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,6 +188,8 @@ MonoBehaviour:
   moveSpeed: 2.5
   bullet: {fileID: 5745469097443436795, guid: 054f61b014c62744f82e3ce809aef20e, type: 3}
   bulletPosition: {fileID: 4933551693724071236}
+  numberOfLives: 5
+  bulletTimer: 0
 --- !u!50 &4560430357322629113
 Rigidbody2D:
   serializedVersion: 4

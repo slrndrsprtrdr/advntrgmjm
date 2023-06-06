@@ -13,6 +13,8 @@ TagManager:
   - GunUpgrade
   - LifeUpgrade
   - BonusLevel
+  - Bullet
+  - EnemyShip
   layers:
   - Default
   - TransparentFX

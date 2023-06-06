@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 6715296923889152980}
   - component: {fileID: 5235725176238878241}
   - component: {fileID: 7679177935543036970}
-  - component: {fileID: 7328565943178584912}
+  - component: {fileID: 6941273795157632012}
   m_Layer: 13
   m_Name: Enemy Fire
   m_TagString: Rocket
@@ -156,7 +156,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &7328565943178584912
+--- !u!114 &6941273795157632012
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5745469097443436795}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb7109ac5bce9ff45a21ef0c77a00c23, type: 3}
+  m_Script: {fileID: 11500000, guid: 31115f2e2a2c2fa4d8fdfab11d766c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSpeed: 20
+  fireSpeed: 15
