@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     float rocketLaunchDelayTime = 1f;
     float rocketLauncherDestroyerDelayTime = 3f;
     float startNextLevelDelay = 3f;
+    public int numberOfLives = 3;
 
     bool isAlive = true;
     bool gunUpgrade = false;
@@ -55,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         Slide();
-        Die();
+        //Die();
     }
 
     void OnFire(InputValue value)
@@ -113,15 +114,18 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody.velocity = rocketMoveSpeed;
     }
 
-    void Die()
-    {
-        if(myCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) || myCollider.IsTouchingLayers(LayerMask.GetMask("Enemies")))
-        {
-            isAlive = true;
-            
-            FindObjectOfType<LevelManager>().RocketDestroy();
-        }
-    }
+    //void Die()
+    //{
+    //    if(myCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+    //    {
+    //        numberOfLives--;
+    //        if(numberOfLives==0)
+    //        {
+    //            isAlive = true;
+    //            FindObjectOfType<LevelManager>().RocketDestroy();
+    //        }
+    //    }
+    //}
 
     void RocketLaunch()
     {
@@ -150,6 +154,37 @@ public class PlayerMovement : MonoBehaviour
                 Invoke("StartNextLevel", startNextLevelDelay);
                 playerInput.enabled = false;
                 Invoke("EnableInput", enableInputDelayTime);
+                break;
+            case "Enemy":
+                numberOfLives--;
+                Destroy(collision.gameObject);
+                if (numberOfLives == 0)
+                {
+                    FindObjectOfType<LevelManager>().RocketDestroy();
+                }
+                break;
+            case "Platform":
+                numberOfLives--;
+                if (numberOfLives == 0)
+                {
+                    FindObjectOfType<LevelManager>().RocketDestroy();
+                }
+                break;
+            case "BoxDestroyable":
+                numberOfLives--;
+                Destroy(collision.gameObject);
+                if (numberOfLives == 0)
+                {
+                    FindObjectOfType<LevelManager>().RocketDestroy();
+                }
+                break;
+            case "BoxReward":
+                numberOfLives--;
+                Destroy(collision.gameObject);
+                if (numberOfLives == 0)
+                {
+                    FindObjectOfType<LevelManager>().RocketDestroy();
+                }
                 break;
         }
     }

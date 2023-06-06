@@ -19,16 +19,21 @@ public class RocketFire : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
-        {
-            Destroy(collision.gameObject);
-        }
         Destroy(gameObject);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
+        if (collision.collider.tag == "Enemy" || collision.collider.tag == "BoxDestroyable")
+        {
+            Destroy(collision.gameObject);
+        }
+        if (collision.collider.tag == "BoxReward")
+        {
+            Destroy(collision.gameObject);
+            //Add reward
+        }
 
         //switch (collision.collider.tag)
         //{

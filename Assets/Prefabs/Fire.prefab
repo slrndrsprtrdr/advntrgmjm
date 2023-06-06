@@ -169,3 +169,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireSpeed: 20
+  playerObject: {fileID: 5745469097443436795, guid: f6baf67250aff8f45b555e890620a377, type: 3}
+  playerMovementScript: {fileID: 3972430076518421252, guid: f6baf67250aff8f45b555e890620a377, type: 3}
