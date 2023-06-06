@@ -168,7 +168,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -234,9 +234,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slideSpeed: 5
   bounceSpeed: 5
-  launchSpeed: 15
+  launchSpeed: 10
   bullet: {fileID: 5745469097443436795, guid: 1a075bcc9493b534188d87d427c971d8, type: 3}
-  bulletPosition: {fileID: 4598425585946014876}
+  bulletPositionL: {fileID: 0}
+  bulletPositionR: {fileID: 0}
 --- !u!1 &7754984922111751588
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4598425585946014876}
-  m_Layer: 13
+  m_Layer: 9
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,9 +44,9 @@ GameObject:
   - component: {fileID: 5235725176238878241}
   - component: {fileID: 7679177935543036970}
   - component: {fileID: 6941273795157632012}
-  m_Layer: 13
+  m_Layer: 9
   m_Name: Enemy Fire
-  m_TagString: Rocket
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
