@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -94,6 +95,18 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void OnSlow(InputValue value)
+    {
+        if (!isAlive)
+        {
+            return;
+        }
+        if (value.isPressed)
+        {
+            myRigidbody.velocity -= new Vector2(0f, 2f);
+            audioPlayer.BouncingClip();
+        }
+    }
     void Slide()
     {
         Vector2 rocketMoveSpeed = new Vector2 (moveInput.x * slideSpeed, myRigidbody.velocity.y);
@@ -104,7 +117,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if(myCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) || myCollider.IsTouchingLayers(LayerMask.GetMask("Enemies")))
         {
-            isAlive = false;
+            isAlive = true;
+            
             FindObjectOfType<LevelManager>().RocketDestroy();
         }
     }

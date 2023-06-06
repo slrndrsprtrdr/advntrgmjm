@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +24,7 @@ public class LevelManager : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
+        
     }
     void Start()
     {
@@ -51,9 +53,13 @@ public class LevelManager : MonoBehaviour
     void ReduceLife()
     {
         numberOfPlayerLives--;
+
         int curretSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(curretSceneIndex);
+
         livesText.text = numberOfPlayerLives.ToString();
+        Debug.Log(numberOfPlayerLives);
+        
     }
 
     public void IncreaseLife()
