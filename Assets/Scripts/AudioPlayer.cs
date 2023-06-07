@@ -12,25 +12,31 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip firingClip;
     [SerializeField] [Range(0f, 1f)] float firingVolume = 1f;
 
-    [Header("Landing")]
-    [SerializeField] AudioClip landingClip;
-    [SerializeField] [Range(0f, 1f)] float landingVolume = 1f;
-
-    [Header("Turbo")]
-    [SerializeField] AudioClip turboClip;
-    [SerializeField] [Range(0f, 1f)] float turboVolume = 1f;
-
     [Header("Collision")]
     [SerializeField] AudioClip collisionClip;
     [SerializeField] [Range(0f, 1f)] float collisionVolume = 1f;
+
+    [Header("Explosion")]
+    [SerializeField] AudioClip explosionClip;
+    [SerializeField] [Range(0f, 1f)] float explosionVolume = 1f;
 
     [Header("Coin Pickup")]
     [SerializeField] AudioClip coinPickupClip;
     [SerializeField] [Range(0f, 1f)] float coinPickupVolume = 1f;
 
+    [Header("Life and Gun Pickup")]
+    [SerializeField] AudioClip lifeAndGunPickupClip;
+    [SerializeField] [Range(0f, 1f)] float lifeAndGunPickupVolume = 1f;
+
+
     [Header("Finished Level")]
     [SerializeField] AudioClip finishedLevelClip;
     [SerializeField] [Range(0f, 1f)] float finishedLevelVolume = 1f;
+
+    void Start()
+    {
+        FindObjectOfType<Music>().StopMusic();
+    }
     public void BouncingClip()
     {
         PlayClip(bouncingClip, bouncingVolume);
@@ -41,19 +47,14 @@ public class AudioPlayer : MonoBehaviour
         PlayClip(firingClip, firingVolume);
     }
 
-    public void LandingClip()
-    {
-        PlayClip(landingClip, landingVolume);
-    }
-
-    public void TurboClip()
-    {
-        PlayClip(turboClip, turboVolume);
-    }
-
     public void CollisionClip()
     {
         PlayClip(collisionClip, collisionVolume);
+    }
+
+    public void ExplosionClip()
+    {
+        PlayClip(explosionClip, explosionVolume);
     }
 
     public void CoinPickupClip()
@@ -61,6 +62,10 @@ public class AudioPlayer : MonoBehaviour
         PlayClip(coinPickupClip, coinPickupVolume);
     }
 
+    public void LifeAndGunPickupClip()
+    {
+        PlayClip(lifeAndGunPickupClip, lifeAndGunPickupVolume);
+    }
     public void FinishedLevelClip()
     {
         PlayClip(finishedLevelClip, finishedLevelVolume);

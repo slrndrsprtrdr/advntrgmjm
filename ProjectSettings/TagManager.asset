@@ -17,6 +17,7 @@ TagManager:
   - EnemyShip
   - BoxDestroyable
   - BoxReward
+  - Music
   layers:
   - Default
   - TransparentFX
