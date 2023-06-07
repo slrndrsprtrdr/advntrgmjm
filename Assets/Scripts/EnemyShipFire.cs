@@ -11,7 +11,6 @@ public class EnemyShipFire : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
     }
 
-
     void Update()
     {
         myRigidbody.velocity = new Vector2(0f, -fireSpeed);
