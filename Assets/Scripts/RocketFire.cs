@@ -7,6 +7,7 @@ public class RocketFire : MonoBehaviour
     [SerializeField] float fireSpeed = 20f;
     Rigidbody2D myRigidbody;
     AudioPlayer audioPlayer;
+    GameObject gunUpgrade;
 
     void Awake()
     {
@@ -43,7 +44,8 @@ public class RocketFire : MonoBehaviour
         {
             audioPlayer.BoxDestructionClip();
             Destroy(collision.gameObject);
-            //Add reward
+            GameObject gunUpgrade = (GameObject)Instantiate(Resources.Load("Life Upgrade"));
+            gunUpgrade.transform.position = collision.transform.position;
         }
 
         //switch (collision.collider.tag)

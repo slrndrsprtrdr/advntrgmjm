@@ -46,31 +46,34 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            ReloadGame();
+            GameOver();
         }
     }
 
     void ReduceLife()
     {
         numberOfPlayerLives--;
-
         int curretSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(curretSceneIndex);
-
-        livesText.text = numberOfPlayerLives.ToString();
-        Debug.Log(numberOfPlayerLives);
-        
+        livesText.text = numberOfPlayerLives.ToString();      
     }
 
     public void IncreaseLife()
     {
-        numberOfPlayerLives++;
+        for (int i = 1; i < 4; i++)
+        {
+            if(numberOfPlayerLives == i)
+            {
+                numberOfPlayerLives = i + 1;
+            }
+        }
+        //numberOfPlayerLives++;
         int curretSceneIndex = SceneManager.GetActiveScene().buildIndex;
         livesText.text = numberOfPlayerLives.ToString();
     }
-    void ReloadGame()
+    void GameOver()
     {
-        SceneManager.LoadScene(0);
         Destroy(gameObject);
+        SceneManager.LoadScene(2);
     }
 }

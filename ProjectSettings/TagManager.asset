@@ -19,6 +19,9 @@ TagManager:
   - BoxReward
   - Music
   - Laser
+  - Health1
+  - Health2
+  - Health3
   layers:
   - Default
   - TransparentFX

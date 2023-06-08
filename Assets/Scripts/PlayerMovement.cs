@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     AudioPlayer audioPlayer;
     PlayerInput playerInput;
 
+
+
     void Awake()
     {
         audioPlayer = FindObjectOfType<AudioPlayer>();
@@ -37,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+
         myRigidbody = GetComponent<Rigidbody2D>();
         myCollider = GetComponent<CapsuleCollider2D>();
         playerInput = GetComponent<PlayerInput>();
@@ -56,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
+
         Slide();
         //Die();
     }
