@@ -151,16 +151,23 @@ public class PlayerMovement : MonoBehaviour
         switch (collision.collider.tag)
         {
             case "RocketLanding":
+                audioPlayer.FinishedLevelClip();
                 Invoke("StartNextLevel", startNextLevelDelay);
                 playerInput.enabled = false;
                 Invoke("EnableInput", enableInputDelayTime);
                 break;
             case "Enemy":
-                numberOfLives--;
                 Destroy(collision.gameObject);
-                if (numberOfLives == 0)
+                if (numberOfLives == 1)
                 {
+                    audioPlayer.ExplosionClip();
+                    numberOfLives--;
                     FindObjectOfType<LevelManager>().RocketDestroy();
+                }
+                else
+                {
+                    numberOfLives--;
+                    audioPlayer.CollisionClip();
                 }
                 break;
             case "Platform":
@@ -172,6 +179,7 @@ public class PlayerMovement : MonoBehaviour
                 break;
             case "BoxDestroyable":
                 numberOfLives--;
+                audioPlayer.BoxDestructionClip();
                 Destroy(collision.gameObject);
                 if (numberOfLives == 0)
                 {
@@ -180,6 +188,7 @@ public class PlayerMovement : MonoBehaviour
                 break;
             case "BoxReward":
                 numberOfLives--;
+                audioPlayer.BoxDestructionClip();
                 Destroy(collision.gameObject);
                 if (numberOfLives == 0)
                 {
@@ -194,11 +203,13 @@ public class PlayerMovement : MonoBehaviour
         switch (collision.tag)
         {
             case "GunUpgrade":
+                audioPlayer.LifeAndGunPickupClip();
                 gunUpgrade = true;
                 Destroy(collision.gameObject);
                 break;
 
             case "LifeUpgrade":
+                audioPlayer.LifeAndGunPickupClip();
                 FindObjectOfType<LevelManager>().IncreaseLife();
                 Destroy(collision.gameObject);
                 break;

@@ -28,6 +28,10 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip lifeAndGunPickupClip;
     [SerializeField] [Range(0f, 1f)] float lifeAndGunPickupVolume = 1f;
 
+    [Header("Box Destruction")]
+    [SerializeField] AudioClip boxDestructionClip;
+    [SerializeField] [Range(0f, 1f)] float boxDestructionVolume = 1f;
+
 
     [Header("Finished Level")]
     [SerializeField] AudioClip finishedLevelClip;
@@ -65,6 +69,10 @@ public class AudioPlayer : MonoBehaviour
     public void LifeAndGunPickupClip()
     {
         PlayClip(lifeAndGunPickupClip, lifeAndGunPickupVolume);
+    }
+    public void BoxDestructionClip()
+    {
+        PlayClip(boxDestructionClip, boxDestructionVolume);
     }
     public void FinishedLevelClip()
     {

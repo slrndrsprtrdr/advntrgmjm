@@ -6,7 +6,12 @@ public class RocketFire : MonoBehaviour
 {
     [SerializeField] float fireSpeed = 20f;
     Rigidbody2D myRigidbody;
+    AudioPlayer audioPlayer;
 
+    void Awake()
+    {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -25,12 +30,18 @@ public class RocketFire : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
-        if (collision.collider.tag == "Enemy" || collision.collider.tag == "BoxDestroyable")
+        if (collision.collider.tag == "Enemy")
         {
+            Destroy(collision.gameObject);
+        }
+        if (collision.collider.tag == "BoxDestroyable")
+        {
+            audioPlayer.BoxDestructionClip();
             Destroy(collision.gameObject);
         }
         if (collision.collider.tag == "BoxReward")
         {
+            audioPlayer.BoxDestructionClip();
             Destroy(collision.gameObject);
             //Add reward
         }
