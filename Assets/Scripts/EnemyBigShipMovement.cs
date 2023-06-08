@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class EnemyBigShipMovement : MonoBehaviour
 {
-    [SerializeField] float moveSpeedX = 3f;
-    [SerializeField] float moveSpeedY = 2f;
+    [SerializeField] float moveSpeedX = 1.5f;
+    [SerializeField] float moveSpeedY = 3f;
     [SerializeField] GameObject bullet;
     [SerializeField] Transform bulletPositionLeft;
     [SerializeField] Transform bulletPositionRight;
-    [SerializeField] int numberOfLives = 20;
-    [SerializeField] float bulletTimer;
+    [SerializeField] int numberOfLives = 30;
+    float bulletTimer;
+    float verticalMoveTimer;
     Rigidbody2D myRigidbody;
     bool shooting = false;
     void Start()
@@ -26,15 +27,22 @@ public class EnemyBigShipMovement : MonoBehaviour
         {
             Instantiate(bullet, bulletPositionLeft.position, transform.rotation);
             Instantiate(bullet, bulletPositionRight.position, transform.rotation);
-            bulletTimer = 0.9f;
+            bulletTimer = 1f;
+        }
+        verticalMoveTimer -= Time.deltaTime;
+        if (verticalMoveTimer <= 0f)
+        {
+            moveSpeedY = -moveSpeedY;
+            verticalMoveTimer = 12.5f; 
         }
         myRigidbody.velocity = new Vector2(moveSpeedX, moveSpeedY);
+
+
 
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
         moveSpeedX = -moveSpeedX;
-        moveSpeedY = -moveSpeedY;
     }
 
     void OnCollisionEnter2D(Collision2D collision)

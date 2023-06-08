@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     float rocketLaunchDelayTime = 1f;
     float rocketLauncherDestroyerDelayTime = 3f;
     float startNextLevelDelay = 3f;
+    float rendererEnableTime = 0.1f;
     public int numberOfLives = 3;
 
     bool isAlive = true;
@@ -195,7 +196,21 @@ public class PlayerMovement : MonoBehaviour
                     FindObjectOfType<LevelManager>().RocketDestroy();
                 }
                 break;
+            case "Laser":
+                numberOfLives--;
+                gameObject.GetComponent<SpriteRenderer>().GetComponent<Renderer>().enabled = false;
+                Invoke ("EnableRenderer" , rendererEnableTime);
+                if (numberOfLives == 0)
+                {
+                    FindObjectOfType<LevelManager>().RocketDestroy();
+                }
+            break;
         }
+    }
+
+    void EnableRenderer()
+    {
+    gameObject.GetComponent<SpriteRenderer>().GetComponent<Renderer>().enabled = true;
     }
 
     void OnTriggerEnter2D(Collider2D collision)

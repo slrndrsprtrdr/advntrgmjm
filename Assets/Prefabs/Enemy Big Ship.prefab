@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 3121717983383732261}
   - component: {fileID: 6581974913666440220}
   - component: {fileID: 1620238074411667315}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy Big Ship
-  m_TagString: Untagged
+  m_TagString: EnemyShip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,12 +103,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce98c8bd3b454840a683d9ab82e709b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  bullet: {fileID: 5745469097443436795, guid: 054f61b014c62744f82e3ce809aef20e, type: 3}
+  moveSpeedX: 1
+  moveSpeedY: -1
+  bullet: {fileID: 5745469097443436795, guid: 33233366866fa084099eb72b73f8be11, type: 3}
   bulletPositionLeft: {fileID: 8166078907808498062}
   bulletPositionRight: {fileID: 203756363912475312}
   numberOfLives: 20
-  bulletTimer: 0
 --- !u!50 &1375038306326373130
 Rigidbody2D:
   serializedVersion: 4
@@ -166,10 +166,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.8432198, y: 0}
+  m_Offset: {x: 2.8556824, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -180,7 +180,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13533783, y: 4.71875}
+  m_Size: {x: 0.1104126, y: 4.71875}
   m_EdgeRadius: 0
 --- !u!61 &1620238074411667315
 BoxCollider2D:
@@ -192,7 +192,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -2.8388977, y: 0}
@@ -217,7 +217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 203756363912475312}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8166078907808498062}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}

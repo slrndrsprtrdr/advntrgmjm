@@ -94,10 +94,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2424491487933175367}
   - component: {fileID: 2424491487933175384}
-  - component: {fileID: 2424491487933175385}
   - component: {fileID: 2424491487933175366}
   - component: {fileID: 2424491487933175364}
   - component: {fileID: 2424491487933175365}
+  - component: {fileID: 1810365460}
   m_Layer: 6
   m_Name: Moving Platform (Horizontal)
   m_TagString: Platform
@@ -149,19 +149,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2424491487933175385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2424491487933175386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e5b97948375d5449a6eb71f4cd537f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: -2
 --- !u!50 &2424491487933175366
 Rigidbody2D:
   serializedVersion: 4
@@ -235,6 +222,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.056669235, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1810365460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2424491487933175386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd7db8d20a25f7b46bae5b85e69324ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: -2
 --- !u!1 &2424491488062902093
 GameObject:
   m_ObjectHideFlags: 0

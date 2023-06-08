@@ -11,7 +11,6 @@ public class MovingPlatformHorizontal : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
     }
 
-
     void Update()
     {
         myRigidbody.velocity = new Vector2(moveSpeed, 0f);

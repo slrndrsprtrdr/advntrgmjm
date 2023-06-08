@@ -97,9 +97,10 @@ GameObject:
   - component: {fileID: 2424722079709647818}
   - component: {fileID: 1032492797407464356}
   - component: {fileID: 1800435733720067665}
+  - component: {fileID: 3247047920846751687}
   m_Layer: 0
   m_Name: Moving Platform (Vertical)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,6 +222,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3247047920846751687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200863344517855601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2040f2d2b853d5c44bf6c3b9bc447df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: -2
 --- !u!1 &3342897601951957229
 GameObject:
   m_ObjectHideFlags: 0

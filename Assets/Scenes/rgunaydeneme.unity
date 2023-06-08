@@ -139737,24 +139737,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2730708775284776677, guid: 4a3c3dc98d65aaa4f8152fff81acb74a, type: 3}
   m_PrefabInstance: {fileID: 593384475}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1810365453 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2424491487933175386, guid: 2b94197610d9a2b4da048d645e2fe33d, type: 3}
-  m_PrefabInstance: {fileID: 2424491488295578199}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1810365460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810365453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd7db8d20a25f7b46bae5b85e69324ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: -2
 --- !u!4 &1813537288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2730708775284776677, guid: 4a3c3dc98d65aaa4f8152fff81acb74a, type: 3}
@@ -142934,8 +142916,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moving Platform (Horizontal)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2424491487933175385, guid: 2b94197610d9a2b4da048d645e2fe33d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b94197610d9a2b4da048d645e2fe33d, type: 3}
 --- !u!1001 &4560430357261376441
 PrefabInstance:
@@ -143314,14 +143295,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1032492797407464356, guid: 1a393eaa2bcd6294ca5b2e96c392c734, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2424722079709647818, guid: 1a393eaa2bcd6294ca5b2e96c392c734, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2596753689939375144, guid: 1a393eaa2bcd6294ca5b2e96c392c734, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -143370,30 +143343,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moving Platform (Vertical)
       objectReference: {fileID: 0}
-    - target: {fileID: 3200863344517855601, guid: 1a393eaa2bcd6294ca5b2e96c392c734, type: 3}
-      propertyPath: m_TagString
-      value: Platform
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a393eaa2bcd6294ca5b2e96c392c734, type: 3}
---- !u!1 &6561000225622617599 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3200863344517855601, guid: 1a393eaa2bcd6294ca5b2e96c392c734, type: 3}
-  m_PrefabInstance: {fileID: 6561000225622617598}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6561000225622617600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6561000225622617599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2040f2d2b853d5c44bf6c3b9bc447df1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: -2
 --- !u!1001 &6778333288380470845
 PrefabInstance:
   m_ObjectHideFlags: 0

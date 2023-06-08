@@ -18,6 +18,7 @@ TagManager:
   - BoxDestroyable
   - BoxReward
   - Music
+  - Laser
   layers:
   - Default
   - TransparentFX
