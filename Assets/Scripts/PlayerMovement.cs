@@ -79,6 +79,11 @@ public class PlayerMovement : MonoBehaviour
 
         FindObjectOfType<HealthManager>().TakeDamage(numberOfLives);
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         //Die();
     }
 
