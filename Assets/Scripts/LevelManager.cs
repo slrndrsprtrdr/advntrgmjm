@@ -16,15 +16,16 @@ public class LevelManager : MonoBehaviour
 
     void Awake()
     {
-        int numGameSessions = FindObjectsOfType<LevelManager>().Length;
-        if (numGameSessions > 1)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
+        //int numGameSessions = FindObjectsOfType<LevelManager>().Length;
+        //if (numGameSessions > 1)
+        //{
+        //    Destroy(gameObject);
+        //}
+        //else
+        //{
+        //    DontDestroyOnLoad(gameObject);
+        //}
+        DontDestroyOnLoad(gameObject);
     }
     void Start()
     {
