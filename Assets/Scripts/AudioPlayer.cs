@@ -20,6 +20,10 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip collisionClip;
     [SerializeField] [Range(0f, 1f)] float collisionVolume = 1f;
 
+    [Header("Platform Collision")]
+    [SerializeField] AudioClip platformCollisionClip;
+    [SerializeField] [Range(0f, 1f)] float platformCollisionVolume = 1f;
+
     [Header("Explosion")]
     [SerializeField] AudioClip explosionClip;
     [SerializeField] [Range(0f, 1f)] float explosionVolume = 1f;
@@ -63,6 +67,10 @@ public class AudioPlayer : MonoBehaviour
     public void CollisionClip()
     {
         PlayClip(collisionClip, collisionVolume);
+    }
+    public void PlatformCollisionClip()
+    {
+        PlayClip(platformCollisionClip, platformCollisionVolume);
     }
 
     public void ExplosionClip()

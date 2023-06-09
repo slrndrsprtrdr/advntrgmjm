@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float slideSpeed = 5f;
     [SerializeField] float bounceSpeed = 4f;
+    [SerializeField] float antiBounceSpeed = 2f;
+    [SerializeField] float slowZoneSpeed = 3.5f;
     [SerializeField] float launchSpeed = 10f;
     [SerializeField] GameObject bullet;
     //[SerializeField] Transform bulletPosition;
@@ -22,6 +24,11 @@ public class PlayerMovement : MonoBehaviour
     public int numberOfLives = 3;
     int curretSceneIndex;
 
+    [SerializeField] ParticleSystem finishedLevelEffect;
+    [SerializeField] ParticleSystem collisionEffect;
+    [SerializeField] ParticleSystem bounceEffect;
+    [SerializeField] ParticleSystem upgradeEffect;
+
     bool isAlive = true;
     bool gunUpgrade = false;
 
@@ -33,10 +40,14 @@ public class PlayerMovement : MonoBehaviour
 
 
 
+
+
     void Awake()
     {
         audioPlayer = FindObjectOfType<AudioPlayer>();
     }
+
+
 
     void Start()
     {
@@ -65,6 +76,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Slide();
+
+        FindObjectOfType<HealthManager>().TakeDamage(numberOfLives);
+
         //Die();
     }
 
@@ -100,6 +114,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (value.isPressed)
         {
+            bounceEffect.Play();
             myRigidbody.velocity += new Vector2(0f, bounceSpeed);
             audioPlayer.BouncingClip();
         }
@@ -113,8 +128,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (value.isPressed)
         {
-            myRigidbody.velocity -= new Vector2(0f, 2f);
-            audioPlayer.BouncingClip();
+            myRigidbody.velocity -= new Vector2(0f, antiBounceSpeed);
         }
     }
     void Slide()
@@ -152,6 +166,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void StartNextLevel()
     {
+        FindObjectOfType<SceneBalance>().ResetSceneBalance();
         SceneManager.LoadScene(curretSceneIndex+1);
     }
 
@@ -164,6 +179,7 @@ public class PlayerMovement : MonoBehaviour
                 Invoke("StartNextLevel", startNextLevelDelay);
                 playerInput.enabled = false;
                 Invoke("EnableInput", enableInputDelayTime);
+                finishedLevelEffect.Play();
                 break;
             case "Enemy":
                 Destroy(collision.gameObject);
@@ -175,20 +191,30 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else
                 {
+                    collisionEffect.Play();
                     numberOfLives--;
+                    gameObject.GetComponent<SpriteRenderer>().GetComponent<Renderer>().enabled = false;
+                    Invoke("EnableRenderer", rendererEnableTime);
                     audioPlayer.CollisionClip();
                 }
                 break;
             case "Platform":
+                collisionEffect.Play();
                 numberOfLives--;
+                audioPlayer.PlatformCollisionClip();
+                gameObject.GetComponent<SpriteRenderer>().GetComponent<Renderer>().enabled = false;
+                Invoke("EnableRenderer", rendererEnableTime);
                 if (numberOfLives == 0)
                 {
                     FindObjectOfType<LevelManager>().RocketDestroy();
                 }
                 break;
             case "BoxDestroyable":
+                collisionEffect.Play();
                 numberOfLives--;
                 audioPlayer.BoxDestructionClip();
+                gameObject.GetComponent<SpriteRenderer>().GetComponent<Renderer>().enabled = false;
+                Invoke("EnableRenderer", rendererEnableTime);
                 Destroy(collision.gameObject);
                 if (numberOfLives == 0)
                 {
@@ -196,8 +222,11 @@ public class PlayerMovement : MonoBehaviour
                 }
                 break;
             case "BoxReward":
+                collisionEffect.Play();
                 numberOfLives--;
                 audioPlayer.BoxDestructionClip();
+                gameObject.GetComponent<SpriteRenderer>().GetComponent<Renderer>().enabled = false;
+                Invoke("EnableRenderer", rendererEnableTime);
                 Destroy(collision.gameObject);
                 if (numberOfLives == 0)
                 {
@@ -205,6 +234,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                 break;
             case "Laser":
+                collisionEffect.Play();
                 numberOfLives--;
                 gameObject.GetComponent<SpriteRenderer>().GetComponent<Renderer>().enabled = false;
                 Invoke ("EnableRenderer" , rendererEnableTime);
@@ -226,19 +256,21 @@ public class PlayerMovement : MonoBehaviour
         switch (collision.tag)
         {
             case "GunUpgrade":
+                upgradeEffect.Play();
                 audioPlayer.LifeAndGunPickupClip();
                 gunUpgrade = true;
                 Destroy(collision.gameObject);
                 break;
 
             case "LifeUpgrade":
+                upgradeEffect.Play();
                 audioPlayer.LifeAndGunPickupClip();
                 FindObjectOfType<LevelManager>().IncreaseLife();
                 Destroy(collision.gameObject);
                 break;
 
-            case "BonusLevel":
-                SceneManager.LoadScene(0);
+            case "SlowZone":
+                myRigidbody.velocity -= new Vector2(0, slowZoneSpeed);
                 break;
         }
     }

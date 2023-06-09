@@ -35,7 +35,6 @@ public class LevelManager : MonoBehaviour
         score = 0;
         livesText.text = numberOfPlayerLives.ToString();
         scoreText.text = score.ToString();
-
     }
 
     void Update()
@@ -90,6 +89,7 @@ public class LevelManager : MonoBehaviour
     void GameOver()
     {
         Destroy(gameObject);
+        FindObjectOfType<SceneBalance>().ResetSceneBalance();
         SceneManager.LoadScene(2);
     }
 }

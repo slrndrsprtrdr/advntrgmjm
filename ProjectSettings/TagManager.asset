@@ -22,6 +22,7 @@ TagManager:
   - Health1
   - Health2
   - Health3
+  - SlowZone
   layers:
   - Default
   - TransparentFX
