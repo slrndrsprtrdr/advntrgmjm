@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     float startNextLevelDelay = 3f;
     float rendererEnableTime = 0.1f;
     public int numberOfLives = 3;
+    int curretSceneIndex;
 
     bool isAlive = true;
     bool gunUpgrade = false;
@@ -50,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
         Invoke("RocketLaunch", rocketLaunchDelayTime);
         Invoke("RocketLauncherDestroy", rocketLauncherDestroyerDelayTime);
         Invoke("EnableInput", enableInputDelayTime);
+
+        curretSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
 
@@ -149,7 +152,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void StartNextLevel()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(curretSceneIndex+1);
     }
 
     void OnCollisionEnter2D(Collision2D collision)

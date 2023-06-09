@@ -8,7 +8,8 @@ using TMPro;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] int numberOfPlayerLives = 3;
-    [SerializeField] int score = 0;
+    public static int score;
+    public static int highScore;
 
     [SerializeField] TextMeshProUGUI livesText;
     [SerializeField] TextMeshProUGUI scoreText;
@@ -16,34 +17,41 @@ public class LevelManager : MonoBehaviour
 
     void Awake()
     {
-        //int numGameSessions = FindObjectsOfType<LevelManager>().Length;
-        //if (numGameSessions > 1)
-        //{
-        //    Destroy(gameObject);
-        //}
-        //else
-        //{
-        //    DontDestroyOnLoad(gameObject);
-        //}
-        DontDestroyOnLoad(gameObject);
+        int numGameSessions = FindObjectsOfType<LevelManager>().Length;
+        if (numGameSessions > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+        //DontDestroyOnLoad(gameObject);
     }
     void Start()
     {
+        highScore = PlayerPrefs.GetInt("HighScore", highScore);
+        highScoreText.text = highScore.ToString();
+        score = 0;
         livesText.text = numberOfPlayerLives.ToString();
         scoreText.text = score.ToString();
-        highScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+
+    }
+
+    void Update()
+    {
+        if (score > highScore)
+        {
+            highScore = score;
+            highScoreText.text = score.ToString();
+            PlayerPrefs.SetInt("HighScore", highScore);
+        }
     }
 
     public void PointsToScore(int coinsToScore)
     {
         score += coinsToScore;
-        scoreText.text = score.ToString();
-        if (score > PlayerPrefs.GetInt("HighScore", 0))
-        {
-            PlayerPrefs.GetInt("HighScore", score);
-            highScoreText.text = score.ToString();
-        }
-        
+        scoreText.text = score.ToString();      
     }
 
     public void RocketDestroy()
