@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class AudioPlayer : MonoBehaviour
 {
+    [Header("Rocket Launch")]
+    [SerializeField] AudioClip rocketLaunchClip;
+    [SerializeField] [Range(0f, 1f)] float rocketLaunchVolume = 1f;
+
     [Header("Bouncing")]
     [SerializeField] AudioClip bouncingClip;
     [SerializeField] [Range(0f, 1f)] float bouncingVolume = 1f;
@@ -40,6 +44,11 @@ public class AudioPlayer : MonoBehaviour
     void Start()
     {
         FindObjectOfType<Music>().StopMusic();
+    }
+
+    public void RocketLaunchClip()
+    {
+        PlayClip(rocketLaunchClip, rocketLaunchVolume);
     }
     public void BouncingClip()
     {

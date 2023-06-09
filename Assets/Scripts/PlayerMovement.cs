@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
 
         playerInput.enabled = false;
+        audioPlayer.RocketLaunchClip();
 
         Invoke("RocketLaunch", rocketLaunchDelayTime);
         Invoke("RocketLauncherDestroy", rocketLauncherDestroyerDelayTime);

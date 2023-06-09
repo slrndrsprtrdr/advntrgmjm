@@ -12,11 +12,12 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI livesText;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI highScoreText;
 
     void Awake()
     {
         int numGameSessions = FindObjectsOfType<LevelManager>().Length;
-        if(numGameSessions > 1)
+        if (numGameSessions > 1)
         {
             Destroy(gameObject);
         }
@@ -24,18 +25,24 @@ public class LevelManager : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
-        
     }
     void Start()
     {
         livesText.text = numberOfPlayerLives.ToString();
         scoreText.text = score.ToString();
+        highScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
 
     public void PointsToScore(int coinsToScore)
     {
         score += coinsToScore;
         scoreText.text = score.ToString();
+        if (score > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.GetInt("HighScore", score);
+            highScoreText.text = score.ToString();
+        }
+        
     }
 
     public void RocketDestroy()
