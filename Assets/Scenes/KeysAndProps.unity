@@ -662,7 +662,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: space - bounce
+  m_text: space key - bounce
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed3905c8b9d67144bb5706bf8c4d73e3, type: 2}
   m_sharedMaterial: {fileID: -3524210238564342292, guid: ed3905c8b9d67144bb5706bf8c4d73e3, type: 2}
@@ -797,7 +797,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: down arrow button - down speed
+  m_text: down arrow key - down speed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed3905c8b9d67144bb5706bf8c4d73e3, type: 2}
   m_sharedMaterial: {fileID: -3524210238564342292, guid: ed3905c8b9d67144bb5706bf8c4d73e3, type: 2}
@@ -932,7 +932,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: esc - exit game
+  m_text: esc key - exit game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed3905c8b9d67144bb5706bf8c4d73e3, type: 2}
   m_sharedMaterial: {fileID: -3524210238564342292, guid: ed3905c8b9d67144bb5706bf8c4d73e3, type: 2}
@@ -1616,7 +1616,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: left ctrl and left mouse button - fire
+  m_text: left ctrl key and left mouse button - fire
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed3905c8b9d67144bb5706bf8c4d73e3, type: 2}
   m_sharedMaterial: {fileID: -3524210238564342292, guid: ed3905c8b9d67144bb5706bf8c4d73e3, type: 2}
